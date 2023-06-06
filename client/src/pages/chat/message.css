@@ -1,0 +1,57 @@
+.message-container{
+    display:flex;
+    gap:1rem;
+    border-radius:1rem;
+    align-items: end;
+    position:relative;
+}
+.chat-box-body{
+
+    background-image: url('/svg.png');
+}
+.sender .message-body{
+    border-radius: 1rem 1rem 0 1rem;
+    background-color: var(--color-primary);
+    color:white;
+}
+
+.sender{
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+.sender .message-body > *{
+    color:white;
+}
+.receiver .message-body{
+    border-radius: 1rem 1rem 1rem 0;
+    background-color: var(--color-grey);
+    color:var(--color-gray);
+}
+
+.message-body{
+    background-color: var(--color-grey);
+    padding:0.5rem;
+    font-size:var(--text-md);
+    display: flex;
+    max-width: min(60%, 30rem);
+    justify-content:center;
+    align-items: end;
+    gap:0.25rem;
+}
+
+.message-body::after{
+    content : attr("data-user");
+   
+    font-size:3rem;
+    color:var(--color-gray);
+
+}
+
+@media screen and (max-width:600px) {
+    .message-container{
+        gap:0 ;
+    }
+    .message-body{
+        gap:0;
+    }
+}

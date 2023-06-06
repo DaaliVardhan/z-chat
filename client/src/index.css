@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+:root{
+  --color-primary:#8739F9;
+  --color-secondary:#37B9F1;
+  --color-grey:#F2F5F5;
+  --color-text:#565360;
+  --color-label:#908E9B;
+  --color-disabled:#E1DFE9;
+  --text-sm:0.25rem;
+  --text-sm2:0.5rem;
+  --text-sm3:0.75rem;
+  --text-md:1rem;
+  --text-md2:1.25rem;
+  --text-md3:1.5rem;
+  --text-lg:2rem;
+  --text-lg2:3rem;
+  --text-lg3:4rem;
+  --spinner-sm:2rem;
+  --spinner-md:4rem;
+  --spinner-lg:8rem;
+  --spinner-xl:12rem;
+  --spinner-stroke:var(--color-secondary);
+  --color-player:var(--color-primary);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+
+
+body {
+  background-color: #F2F5F5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+ 
+  font-size: 16px;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+  border: 1px solid var(--color-label);
+  outline: none;
+}
+
+#root{
+  width: 100vw;
+  height: 100vh;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  /* width: px; */
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  height: 90%;
+  /* width: 24px; */
+  aspect-ratio: 1 / 1;
+  /* margin: 2px; */
+  /* padding:2px; */
+  border: 4px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
