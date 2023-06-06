@@ -27,7 +27,7 @@ const app = express();
 app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.REACT_CLIENT_URL,
     credentials:true
 }));
 app.use('/public',express.static("public"));
@@ -67,7 +67,7 @@ const server = http.createServer(app);
 
 const io = new Server ( server, {
     cors:{
-        origins:["http://localhost:5173","http://127.0.0.1:5173/","ws://localhost:5173"],
+        origins:["http://localhost:5173","http://127.0.0.1:5173/","ws://localhost:5173",process.env.REACT_CLIENT_URL],
         methods:["GET","POST"],
     }
 })
