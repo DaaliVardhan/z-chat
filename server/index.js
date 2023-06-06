@@ -5,9 +5,6 @@ const { Server } = require('socket.io');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const mongoose =  require('mongoose');
-// const { 
-//     OAuth2Client,
-// } = require('google-auth-library')
 
 
 
@@ -18,7 +15,7 @@ const messageRoute = require('./routes/messageRoute');
 const userRoute = require('./routes/userRoute');
 
 
-// const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
 
 mongoose.connect(process.env.MONGO_URI)
 
@@ -36,16 +33,7 @@ app.use(cors({
 app.use('/public',express.static("public"));
 app.use(cookieParser());
 
-// const users = [];
 
-// function upsert(arr,item){
-//     const i = arr.findIndex((e)=> e.id === item.id);
-//     if(i > -1){
-//         arr[i] = item;
-//     }else{
-//         arr.push(item);
-//     }
-// }
 
 
 app.post('/api/google-login',async (req,res)=>{
@@ -120,41 +108,6 @@ io.on('connection',(socket)=>{
         
     })
 })
-
-// const Users = [];
-// const Admin = 'Admin'
-
-
-// io.on('connection',(socket)=>{
-//     console.log(socket.id);
-
-//     socket.on('join_room', (data) => {
-//         const {username,room} = data;
-//         socket.join(room);
-
-
-//         let createTime = Date.now();
-
-//         socket.to(room).emit('receive_message', {
-//             message: `${username} joined the room`,
-//             username: Admin,
-//             createTime,
-//         });
-
-//         socket.emit('receive_message', {
-//             message: `Welcome ${username}`,
-//             username: Admin,
-//             createTime,
-//         })
-
-//         chatRoom = room;
-//         Users.push({id:socket.id,username,room})
-//         chatRoomUsers = Users.filter((user)=> user.room === room);
-//         socket.to(room).emit('chatroom_users',chatRoomUsers);
-//         socket.emit('chatroom_users',chatRoomUsers);
-
-//     });
-// })
 
 
 server.listen(5000, () => console.log('server running on port 5000'));
