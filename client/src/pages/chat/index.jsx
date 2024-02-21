@@ -83,7 +83,7 @@ const Chat = () => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
     if(e.target.value === "") return setSearchResults([]);
-    const results = users.filter(eachUser => user.username !== eachUser.username && eachUser.username.toLowerCase().includes(e.target.value.toLowerCase()));
+    const results = users;
     setSearchResults(results);
   }
 

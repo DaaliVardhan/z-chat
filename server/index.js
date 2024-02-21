@@ -28,7 +28,7 @@ app.use(express.json({extended:true}));
 app.use(express.urlencoded({extended:true}));
 // console.log(JSON.parse(process.env.REACT_CLIENT_URL))
 app.use(cors({
-    origin: JSON.parse(process.env.REACT_CLIENT_URL),
+    origin: process.env.REACT_CLIENT_URL,
     credentials:true
 }));
 app.use('/public',express.static("public"));
@@ -68,7 +68,7 @@ const server = http.createServer(app);
 
 const io = new Server ( server, {
     cors:{
-        origins:JSON.parse(process.env.REACT_CLIENT_URL),
+        origins:process.env.REACT_CLIENT_URL,
         methods:["GET","POST"],
     }
 })
